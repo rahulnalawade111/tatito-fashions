@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Tatito Fashions</title>
+  <link rel="icon" href="assets/images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=57" />
+</head>
+<body data-page="checkout">
+  <header class="navbar"></header>
+  <main class="page-shell">
+    <div class="breadcrumb">
+      <a href="index.html" data-i18n="breadcrumbHome">Home</a>
+      <span class="sep">/</span>
+      <a href="cart.html" data-i18n="cartTitle">Cart</a>
+      <span class="sep">/</span>
+      <span data-i18n="checkoutTitle">Checkout</span>
+    </div>
+    <div class="category-hero" style="margin-bottom:24px;">
+      <div>
+        <p class="eyebrow" data-i18n="checkoutTitle">Checkout</p>
+        <h1 data-i18n="checkoutTitle">Checkout</h1>
+        <p data-i18n="checkoutDesc">Complete your order in a few simple steps.</p>
+      </div>
+    </div>
+
+    <div class="checkout-steps">
+      <div class="step-indicator"><div class="step-dot active" id="stepDot1">1</div><span class="step-label active" data-i18n="stepShipping">Shipping</span></div>
+      <div class="step-divider"></div>
+      <div class="step-indicator"><div class="step-dot" id="stepDot2">2</div><span class="step-label" data-i18n="stepPayment">Payment</span></div>
+      <div class="step-divider"></div>
+      <div class="step-indicator"><div class="step-dot" id="stepDot3">3</div><span class="step-label" data-i18n="stepReview">Review</span></div>
+    </div>
+
+    <div class="checkout-layout">
+      <div>
+        <!-- Step 1: Shipping -->
+        <div id="stepShippingPanel" class="checkout-panel">
+          <h2 data-i18n="shippingAddress">Shipping Address</h2>
+          <div id="addressList"></div>
+          <button class="btn btn-ghost small" id="toggleAddrFormBtn">+ Add New Address</button>
+          <div id="inlineAddrForm" style="display:none;margin-top:16px;">
+            <div style="background:var(--ivory);border-radius:12px;padding:20px;">
+              <h3 style="font-size:16px;margin-bottom:12px;">New Address</h3>
+              <form id="quickAddrForm" style="display:flex;flex-direction:column;gap:10px;">
+                <input type="text" name="fullName" placeholder="Full Name *" required style="padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;background:var(--surface-solid);color:var(--text);" />
+                <input type="tel" name="phone" placeholder="Phone *" required style="padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;background:var(--surface-solid);color:var(--text);" />
+                <input type="text" name="line1" placeholder="Address Line 1 *" required style="padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;background:var(--surface-solid);color:var(--text);" />
+                <input type="text" name="line2" placeholder="Landmark (optional)" style="padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;background:var(--surface-solid);color:var(--text);" />
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+                  <input type="text" name="city" placeholder="City *" required style="padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;background:var(--surface-solid);color:var(--text);" />
+                  <input type="text" name="state" placeholder="State *" required style="padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;background:var(--surface-solid);color:var(--text);" />
+                  <input type="text" name="pincode" placeholder="Pincode *" required maxlength="6" style="padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;background:var(--surface-solid);color:var(--text);" />
+                </div>
+                <div style="display:flex;gap:8px;">
+                  <button type="submit" class="btn btn-primary small">Save & Select</button>
+                  <button type="button" class="btn btn-ghost small" id="cancelInlineAddrBtn">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:8px;">
+            <button class="btn btn-primary" id="toPaymentBtn" data-i18n="next">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Payment -->
+        <div id="stepPaymentPanel" class="checkout-panel hidden">
+          <h2 data-i18n="paymentMethod">Payment Method</h2>
+          <div id="paymentOptions"></div>
+          <div id="paymentFields"></div>
+          <div style="margin-top:20px;display:flex;gap:8px;">
+            <button class="btn btn-ghost" id="backToShippingBtn" data-i18n="back">Back</button>
+            <button class="btn btn-primary" id="toReviewBtn" data-i18n="next">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Review -->
+        <div id="stepReviewPanel" class="checkout-panel hidden">
+          <h2 data-i18n="orderReview">Order Review</h2>
+          <div id="reviewItems"></div>
+          <div style="margin-top:20px;display:flex;gap:8px;">
+            <button class="btn btn-ghost" id="backToPaymentBtn" data-i18n="back">Back</button>
+            <button class="btn btn-primary" id="placeOrderBtn" data-i18n="placeOrderFinal">Place Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-sidebar">
+        <div id="checkoutSummary" class="cart-summary"></div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <div id="shopToast" class="shop-toast"></div>
+
+  <script src="js/data.js?v=57"></script>
+  <script src="js/translations.js?v=57"></script>
+  <script src="js/store.js?v=57"></script>
+  <script src="js/location-gmaps.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/checkout.js?v=57"></script>
+</body>
+</html>

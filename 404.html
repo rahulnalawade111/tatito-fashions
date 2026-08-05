@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart | Tatito Fashions</title>
+  <link rel="icon" href="assets/images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=57" />
+</head>
+<body data-page="cart">
+  <header class="navbar"></header>
+  <main class="page-shell">
+    <div class="breadcrumb">
+      <a href="index.html" data-i18n="breadcrumbHome">Home</a>
+      <span class="sep">/</span>
+      <span data-i18n="cartTitle">Cart &amp; appointments</span>
+    </div>
+    <section class="category-hero">
+      <div>
+        <p class="eyebrow" data-i18n="shoppingBag">Your shopping bag</p>
+        <h1 data-i18n="cartTitle">Cart &amp; appointments</h1>
+        <p data-i18n="cartDesc">Place orders for products and confirm service bookings from one place.</p>
+      </div>
+      <div class="hero-card">
+        <h3 data-i18n="readyCheckout">Ready to checkout?</h3>
+        <p data-i18n="readyCheckoutDesc">Use the buttons below to place your order or confirm booked services.</p>
+      </div>
+    </section>
+    <section class="section" style="padding:0;">
+      <div class="cart-layout">
+        <div>
+          <div id="cartItems" class="cart-stack"></div>
+          <div id="cartBookings" class="cart-stack" style="margin-top:16px;"></div>
+        </div>
+        <div class="cart-sidebar">
+          <div id="cartSummary" class="cart-summary"></div>
+          <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+            <a href="checkout.html" class="btn btn-primary block" data-i18n="proceedCheckout">Proceed to Checkout</a>
+            <button id="confirmAppointmentsBtn" class="btn btn-ghost block" data-action="confirm-appointments" data-i18n="confirmAppointments">Confirm Booked Services</button>
+            <button id="clearCartBtn" class="btn btn-danger small block" data-i18n="emptyCart">Empty Cart</button>
+            <a href="category.html" class="btn btn-ghost small block" data-i18n="continueShopping">Continue Shopping</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"></footer>
+  <div id="shopToast" class="shop-toast"></div>
+
+  <script src="js/data.js?v=57"></script>
+  <script src="js/translations.js?v=57"></script>
+  <script src="js/store.js?v=57"></script>
+  <script src="js/location-gmaps.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/shop.js?v=57"></script>
+</body>
+</html>

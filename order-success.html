@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed | Tatito Fashions</title>
+  <link rel="icon" href="assets/images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=57" />
+</head>
+<body data-page="order-success">
+  <header class="navbar"></header>
+  <main class="success-page">
+    <div class="success-card">
+      <div class="success-icon">✓</div>
+      <h1 data-i18n="orderSuccessTitle">Order Confirmed!</h1>
+      <p data-i18n="orderSuccessDesc">Thank you for your purchase. Your order has been placed successfully.</p>
+      <div class="order-number-box">
+        <label data-i18n="orderNumber">Order Number</label>
+        <strong id="successOrderId">—</strong>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+        <a href="#" id="viewOrderLink" class="btn btn-primary" data-i18n="viewOrderDetail">View Order Details</a>
+        <a href="category.html" class="btn btn-ghost" data-i18n="continueShoppingBtn">Continue Shopping</a>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <div id="shopToast" class="shop-toast"></div>
+
+  <script src="js/data.js?v=57"></script>
+  <script src="js/translations.js?v=57"></script>
+  <script src="js/store.js?v=57"></script>
+  <script src="js/location-gmaps.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/orders.js?v=57"></script>
+</body>
+</html>

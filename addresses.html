@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saved Addresses | Tatito Fashions</title>
+  <link rel="icon" href="assets/images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=57" />
+</head>
+<body data-page="addresses">
+  <header class="navbar"></header>
+  <main class="page-shell">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="profile.html">My Account</a>
+      <span class="sep">/</span>
+      <span>Addresses</span>
+    </div>
+
+    <h1 style="font-family:var(--font-display);font-size:32px;margin-bottom:24px;">Saved Addresses</h1>
+
+    <div class="checkout-layout">
+      <div>
+        <button class="btn btn-primary small" id="showAddrFormBtn" style="margin-bottom:20px;">+ Add New Address</button>
+
+        <div id="addrFormWrap" style="display:none;margin-bottom:24px;">
+          <div class="checkout-panel">
+            <h2>Add New Address</h2>
+            <form id="addrForm" class="auth-form">
+              <label>
+                <span>Full Name *</span>
+                <input type="text" name="fullName" required placeholder="Recipient name" />
+              </label>
+              <label>
+                <span>Phone Number *</span>
+                <input type="tel" name="phone" required placeholder="+91 98765 43210" />
+              </label>
+              <label>
+                <span>Address Line 1 *</span>
+                <input type="text" name="line1" required placeholder="House no, Building, Street" />
+              </label>
+              <label>
+                <span>Address Line 2</span>
+                <input type="text" name="line2" placeholder="Area, Landmark (optional)" />
+              </label>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <label>
+                  <span>City *</span>
+                  <input type="text" name="city" required placeholder="Mumbai" />
+                </label>
+                <label>
+                  <span>State *</span>
+                  <input type="text" name="state" required placeholder="Maharashtra" />
+                </label>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <label>
+                  <span>Pincode *</span>
+                  <input type="text" name="pincode" required placeholder="400050" maxlength="6" />
+                </label>
+                <label>
+                  <span>Address Type</span>
+                  <select name="type" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-family:inherit;font-size:14px;background:var(--surface-solid);color:var(--text);">
+                    <option value="home">Home</option>
+                    <option value="work">Work</option>
+                    <option value="other">Other</option>
+                  </select>
+                </label>
+              </div>
+              <label style="display:flex;align-items:center;gap:8px;font-size:14px;">
+                <input type="checkbox" name="isDefault" /> Set as default address
+              </label>
+              <div style="display:flex;gap:8px;">
+                <button type="submit" class="btn btn-primary">Save Address</button>
+                <button type="button" class="btn btn-ghost" id="cancelAddrBtn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div id="addrList"></div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <div id="shopToast" class="shop-toast"></div>
+
+  <script src="js/data.js?v=57"></script>
+  <script src="js/translations.js?v=57"></script>
+  <script src="js/store.js?v=57"></script>
+  <script src="js/location-gmaps.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/profile.js?v=57"></script>
+</body>
+</html>

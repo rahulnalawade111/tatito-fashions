@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deals & Offers | Tatito Fashions</title>
+  <meta name="description" content="Limited-time deals and discounts on premium fashion products." />
+  <link rel="icon" href="assets/images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=57" />
+</head>
+<body data-page="deals">
+  <header class="navbar"></header>
+
+  <main class="page-shell">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Deals & Offers</span>
+    </div>
+
+    <div class="deals-hero">
+      <div>
+        <p class="eyebrow">🔥 Limited Time</p>
+        <h1>Deals & Offers</h1>
+        <p>Save big on premium fashion from top-rated boutiques and designers.</p>
+      </div>
+      <div class="deals-timer" id="dealsTimer">
+        <span class="timer-label">Offer ends in:</span>
+        <span class="timer-count" id="dealTimer">23:59:59</span>
+      </div>
+    </div>
+
+    <div class="deals-banners">
+      <div class="deal-banner" style="background:linear-gradient(135deg,#7D1128,#5A0A18);">
+        <div class="deal-banner-text">
+          <span class="deal-tag">MEGA SALE</span>
+          <h3>Up to 20% Off</h3>
+          <p>On bridal & wedding wear</p>
+        </div>
+        <span class="deal-banner-emoji">👰</span>
+      </div>
+      <div class="deal-banner" style="background:linear-gradient(135deg,#C9A24B,#8B6F2E);">
+        <div class="deal-banner-text">
+          <span class="deal-tag">FLASH DEAL</span>
+          <h3>Flat ₹2,000 Off</h3>
+          <p>On premium suits & sherwanis</p>
+        </div>
+        <span class="deal-banner-emoji">🤵</span>
+      </div>
+      <div class="deal-banner" style="background:linear-gradient(135deg,#2B2822,#14120F);">
+        <div class="deal-banner-text">
+          <span class="deal-tag gold">EXCLUSIVE</span>
+          <h3>Free Shipping</h3>
+          <p>On orders above ₹5,000</p>
+        </div>
+        <span class="deal-banner-emoji">🚚</span>
+      </div>
+    </div>
+
+    <div class="section" style="padding-top:32px;">
+      <div class="section-head">
+        <div>
+          <h2>On-Sale Products</h2>
+          <p>Discounted products from across the marketplace</p>
+        </div>
+        <select id="dealsSort" class="sort-select">
+          <option value="discount">Biggest Discount</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+        </select>
+      </div>
+      <div id="dealsGrid" class="product-grid"></div>
+    </div>
+  </main>
+
+  <footer class="footer"></footer>
+  <div id="shopToast" class="shop-toast"></div>
+
+  <script src="js/data.js?v=57"></script>
+  <script src="js/translations.js?v=57"></script>
+  <script src="js/store.js?v=57"></script>
+  <script src="js/location-gmaps.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/deals.js?v=57"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart | Tatito Fashions</title>
+  <link rel="icon" href="assets/images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=57" />
+</head>
+<body data-page="cart">
+  <header class="navbar"></header>
+  <main class="page-shell">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Shopping Cart</span>
+    </div>
+
+    <h1 style="font-family:var(--font-display);font-size:32px;margin-bottom:24px;">Shopping Cart</h1>
+
+    <div class="checkout-layout">
+      <div>
+        <div id="cartItems"></div>
+
+        <div id="cartBookings" style="margin-top:20px;"></div>
+
+        <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+          <a href="category.html" class="btn btn-ghost small">← Continue Shopping</a>
+          <button id="clearCartBtn" class="btn btn-ghost small">Clear Cart</button>
+        </div>
+      </div>
+
+      <aside class="cart-sidebar">
+        <div id="cartSummary" class="cart-summary"></div>
+        <a href="checkout.html" class="btn btn-primary block" style="margin-top:12px;">Proceed to Checkout →</a>
+      </aside>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <div id="shopToast" class="shop-toast"></div>
+
+  <!-- Inline AI Try-On Modal -->
+  <div id="cartTryonModal" class="overlay hidden" style="z-index:9999;">
+    <div class="modal" style="max-width:520px;max-height:90vh;overflow-y:auto;">
+      <button id="cartTryonClose" class="city-close" aria-label="Close" style="position:absolute;top:12px;right:14px;background:none;border:none;font-size:22px;color:var(--muted);cursor:pointer;z-index:1;">&times;</button>
+      <div id="cartTryonContent">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js?v=57"></script>
+  <script src="js/translations.js?v=57"></script>
+  <script src="js/store.js?v=57"></script>
+  <script src="js/location-gmaps.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/shop.js?v=57"></script>
+</body>
+</html>

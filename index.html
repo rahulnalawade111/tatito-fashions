@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tatito Fashions — Custom Fashion For Everyone</title>
+<meta name="description" content="Tatito Fashions — discover boutiques, designers, jewellers and wedding services near you." />
+<link rel="icon" href="assets/images/favicon.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=57" />
+</head>
+<body>
+
+<!-- SPLASH SCREEN -->
+<section id="splash" class="splash">
+  <div class="splash-inner">
+    <img src="assets/images/tatito-logo-official.jpg" alt="Tatito Fashions" class="splash-logo" />
+    <div class="splash-name">
+      <span class="splash-title">TATITO</span>
+      <span class="splash-sub">FASHIONS</span>
+    </div>
+    <h2 class="splash-welcome">Welcome to Tatito Fashions</h2>
+    <p class="splash-tagline">Custom Fashion For Everyone</p>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+    <p class="splash-text" data-i18n="splashText">Finding fashion and services near you…</p>
+  </div>
+</section>
+
+<!-- LOCATION PERMISSION MODAL -->
+<div id="locationModal" class="overlay hidden">
+  <div class="modal">
+    <div class="modal-icon">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z" stroke="#C9A24B" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.5" stroke="#C9A24B" stroke-width="1.5"/></svg>
+    </div>
+    <h2 data-i18n="allowLocation">Allow Location Access</h2>
+    <p data-i18n="locationModalDesc">We use your location to discover nearby boutiques, fashion designers, Jewellery stores, photographers, event planners, caterers, decorators and other services available in your city.</p>
+    <div class="modal-actions">
+      <button id="allowLocationBtn" class="btn btn-primary" data-i18n="allowLocationBtn">Allow Location</button>
+      <button id="manualCityBtn" class="btn btn-ghost" data-i18n="enterCityManually">Enter City Manually</button>
+    </div>
+    <p id="locationStatus" class="modal-status"></p>
+  </div>
+</div>
+
+<!-- CITY SELECTION SCREEN -->
+<div id="cityScreen" class="overlay hidden">
+  <div class="city-panel">
+    <button id="closeCityScreen" class="city-close" aria-label="Close">&times;</button>
+    <h2 data-i18n="selectYourCity">Select Your City</h2>
+    <p class="city-sub" data-i18n="selectCityDesc">Choose a city to see fashion and services near you</p>
+    <div class="city-search-wrap">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#8B6F2E" stroke-width="1.7"/><path d="M21 21l-4-4" stroke="#8B6F2E" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <input type="text" id="citySearchInput" data-i18n-placeholder="searchCity" placeholder="Search for your city…" autocomplete="off" />
+    </div>
+    <ul id="citySuggestions" class="city-suggestions hidden"></ul>
+    <div id="recentCityWrap" class="city-group hidden">
+      <h3 data-i18n="recentCities">Recent</h3>
+      <div id="recentCityList" class="city-chip-list"></div>
+    </div>
+    <div class="city-group">
+      <h3 data-i18n="popularCities">Popular Cities</h3>
+      <div id="popularCityList" class="city-chip-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN SITE -->
+<div id="mainSite" class="hidden">
+  <header class="navbar"></header>
+
+  <main>
+    <!-- ====== HERO SLIDER (Manyavar-style full-width banner) ====== -->
+    <section class="hero-slider" id="heroSlider">
+      <div class="hero-slider-track" id="heroSliderTrack">
+
+        <!-- Slide 1: Bridal Collection -->
+        <div class="hero-slide active" style="background-image:linear-gradient(135deg,rgba(26,18,15,0.55),rgba(90,10,24,0.45)),url('https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1920&q=80');">
+          <div class="hero-slide-content">
+            <span class="hero-slide-tag">✨ New Collection</span>
+            <h2 class="hero-slide-title">Royal Bridal Collection</h2>
+            <p class="hero-slide-desc">Handcrafted lehengas, sherwanis &amp; couture for your special day</p>
+            <div class="hero-slide-actions">
+              <a href="category.html?category=wedding" class="btn btn-gold-slider">Shop Bridal →</a>
+              <a href="try-on.html" class="btn btn-ghost-slider">Virtual Try-On</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Men's Fashion -->
+        <div class="hero-slide" style="background-image:linear-gradient(135deg,rgba(26,18,15,0.5),rgba(90,10,24,0.4)),url('https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1920&q=80');">
+          <div class="hero-slide-content">
+            <span class="hero-slide-tag">👔 Premium Men's Wear</span>
+            <h2 class="hero-slide-title">Dapper &amp; Distinctive</h2>
+            <p class="hero-slide-desc">Sherwanis, kurtas, suits &amp; accessories from top designers near you</p>
+            <div class="hero-slide-actions">
+              <a href="category.html?category=men-wear" class="btn btn-gold-slider">Shop Men →</a>
+              <a href="customize.html" class="btn btn-ghost-slider">Customize Outfit</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Jewellery -->
+        <div class="hero-slide" style="background-image:linear-gradient(135deg,rgba(26,18,15,0.5),rgba(90,10,24,0.42)),url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1920&q=80');">
+          <div class="hero-slide-content">
+            <span class="hero-slide-tag">💍 Exquisite Jewellery</span>
+            <h2 class="hero-slide-title">Timeless Adornments</h2>
+            <p class="hero-slide-desc">Gold, diamond &amp; traditional pieces from trusted jewellers</p>
+            <div class="hero-slide-actions">
+              <a href="category.html?category=jewellery" class="btn btn-gold-slider">Shop Jewellery →</a>
+              <a href="products.html" class="btn btn-ghost-slider">Browse All</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="hero-slider-arrow prev" id="heroSliderPrev" aria-label="Previous slide">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="hero-slider-arrow next" id="heroSliderNext" aria-label="Next slide">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <!-- Dots -->
+      <div class="hero-slider-dots" id="heroSliderDots"></div>
+    </section>
+
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow"><span data-i18n="heroEyebrow">Showing results near</span> <span id="heroLocationText">your city</span></p>
+        <h1><span data-i18n="heroTitle">Discover Fashion,</span> <em data-i18n="heroTitleAccent">Tailored</em> <span data-i18n="heroTitleEnd">to Where You Stand</span></h1>
+        <p class="hero-desc" data-i18n="heroDesc">From heirloom bridal lehengas to the tailor three streets away — Tatito connects you with the boutiques, designers and stylists closest to you.</p>
+        <form id="heroSearchForm" class="hero-search">
+          <button type="button" id="heroLocationBtn" class="hero-search-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z" stroke="#C9A24B" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.2" stroke="#C9A24B" stroke-width="1.6"/></svg>
+            <span id="heroSearchLocationText">Select City</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" class="chev"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="hero-search-divider"></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="hero-search-icon"><circle cx="11" cy="11" r="7" stroke="#8B6F2E" stroke-width="1.7"/><path d="M21 21l-4-4" stroke="#8B6F2E" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <input id="heroSearchInput" type="text" data-i18n-placeholder="searchPlaceholder" placeholder="Search boutiques, designers, jewellery, photographers…" />
+          <button type="submit" class="hero-search-submit" data-i18n="searchBtn">Search</button>
+        </form>
+        <div class="hero-stats">
+          <div><strong>2,400+</strong><span data-i18n="statVendors">Verified Vendors</span></div>
+          <div><strong>18</strong><span data-i18n="statCategories">Service Categories</span></div>
+          <div><strong>4.8★</strong><span data-i18n="statRating">Avg. Customer Rating</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80" alt="Tatito Fashions Bridal Collection" />
+        <div class="hero-visual-glow"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="shopByCategory">Shop by Category</h2>
+          <p data-i18n="shopByCategoryDesc">Curated categories across fashion, Jewellery and wedding services</p>
+        </div>
+      </div>
+      <div id="categoryGrid" class="category-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Trending Products</h2>
+          <p>Most-loved picks across all boutiques</p>
+        </div>
+        <a href="products.html" class="btn btn-ghost small">View All →</a>
+      </div>
+      <div id="featuredProducts" class="product-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>🔥 Deals & Offers</h2>
+          <p>Limited-time discounts on premium products</p>
+        </div>
+        <a href="deals.html" class="btn btn-ghost small">All Deals →</a>
+      </div>
+      <div id="dealsProducts" class="product-grid"></div>
+    </section>
+
+    <section id="nearby" class="section alt">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="nearbyStores">Nearby Stores &amp; Services</h2>
+          <p><span data-i18n="nearbyStoresDesc">Handpicked results around</span> <span id="nearbyLocationText">your area</span></p>
+        </div>
+        <div class="sort-row">
+          <button class="sort-chip active" data-sort="distance" data-i18n="sortNearest">Nearest</button>
+          <button class="sort-chip" data-sort="rating" data-i18n="sortTopRated">Top Rated</button>
+          <button class="sort-chip" data-sort="premium" data-i18n="sortPremium">Premium</button>
+          <button class="sort-chip" data-sort="open" data-i18n="sortOpenNow">Open Now</button>
+        </div>
+      </div>
+      <div id="storeGrid" class="store-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 data-i18n="weddingCollection">Wedding &amp; Occasion Collection</h2>
+        <p data-i18n="weddingCollectionDesc">Bridal wear, mandap decor, photographers and planners — all in one place</p>
+      </div>
+      <div class="feature-strip">
+        <div class="feature-card">
+          <span class="feature-tag" data-i18n="featureBridal">Bridal</span>
+          <h3 data-i18n="featureBridalTitle">Wedding Lehengas &amp; Sherwanis</h3>
+          <p data-i18n="featureBridalDesc">Explore handpicked bridal collections from top-rated boutiques near you.</p>
+        </div>
+        <div class="feature-card dark">
+          <span class="feature-tag gold" data-i18n="featureCustom">Custom</span>
+          <h3 data-i18n="featureCustomTitle">Design Your Own Outfit</h3>
+          <p data-i18n="featureCustomDesc">Upload a reference, share your measurements, and get quotes from nearby designers.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-tag" data-i18n="featureServices">Services</span>
+          <h3 data-i18n="featureServicesTitle">Photographers &amp; Decorators</h3>
+          <p data-i18n="featureServicesDesc">Book verified event professionals for your big day, sorted by rating and distance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h2 data-i18n="newsletterTitle">Stay in the loop</h2>
+      <p data-i18n="newsletterDesc">Get new boutique arrivals and offers near you, once a week.</p>
+      <form onsubmit="return false;" class="newsletter-form">
+        <input type="email" data-i18n-placeholder="newsletterPlaceholder" placeholder="Enter your email" required />
+        <button type="submit" data-i18n="subscribe">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer"></footer>
+</div>
+
+<div id="shopToast" class="shop-toast"></div>
+
+<script src="js/data.js?v=57"></script>
+<script src="js/translations.js?v=57"></script>
+<script src="js/store.js?v=57"></script>
+<script src="js/location.js?v=57"></script>
+<script src="js/location-gmaps.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+<script src="js/shop.js?v=57"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Category Catalog | Tatito Fashions</title>
+  <meta name="description" content="Browse Tatito fashion categories and filtered vendor listings." />
+  <link rel="icon" href="assets/images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=57" />
+</head>
+<body data-page="category">
+  <header class="navbar"></header>
+
+  <main class="page-shell">
+    <div class="breadcrumb" id="catalogBreadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Browse Categories</span>
+    </div>
+
+    <section class="category-hero" style="margin-bottom:20px;">
+      <div>
+        <p class="eyebrow">Marketplace</p>
+        <h1 id="categoryPageTitle" data-i18n="browseAll">Browse All Categories</h1>
+        <p id="categoryPageDescription">Discover premium fashion, Jewellery and wedding services near you.</p>
+      </div>
+      <div class="hero-card">
+        <form id="catalogSearchForm" class="hero-search-mini" style="margin-top:0;">
+          <input id="catalogSearchInput" type="text" data-i18n-placeholder="catalogSearchPlaceholder" placeholder="Search products, services, boutiques…" />
+          <button type="submit" class="btn btn-primary small">Search</button>
+        </form>
+        <p class="search-hint">💡 Try: "sherwani", "saree", "jewellery", "photography", "catering"</p>
+      </div>
+    </section>
+
+    <div id="categoryChipList" class="category-badges"></div>
+    <div id="subcategoryChipList" class="subcategory-badges" style="display:none;"></div>
+
+    <div class="catalog-layout">
+      <aside class="filter-sidebar">
+        <h3 data-i18n="filters">Filters</h3>
+
+        <div class="filter-group">
+          <label>Category</label>
+          <select id="filterCategory" class="sort-select">
+            <option value="all">All Categories</option>
+          </select>
+        </div>
+
+        <div class="filter-group" id="subFilterGroup" style="display:none;">
+          <label>Subcategory</label>
+          <select id="filterSubcategory" class="sort-select">
+            <option value="all">All Subcategories</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label data-i18n="sortBy">Sort By</label>
+          <select id="sortSelect" class="sort-select">
+            <option value="popular">Most Popular</option>
+            <option value="distance" data-i18n="sortNearest">Nearest</option>
+            <option value="rating" data-i18n="sortTopRated">Top Rated</option>
+            <option value="priceLow">Price: Low to High</option>
+            <option value="priceHigh">Price: High to Low</option>
+            <option value="discount">Biggest Discount</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label data-i18n="priceRange">Price Range</label>
+          <div class="price-range-inputs">
+            <input type="number" id="minPrice" placeholder="Min ₹" />
+            <span>—</span>
+            <input type="number" id="maxPrice" placeholder="Max ₹" />
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label>Minimum Rating</label>
+          <div class="rating-radios">
+            <label><input type="radio" name="rating" value="0" checked /> Any</label>
+            <label><input type="radio" name="rating" value="3" /> 3★+</label>
+            <label><input type="radio" name="rating" value="4" /> 4★+</label>
+            <label><input type="radio" name="rating" value="4.5" /> 4.5★+</label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label><input type="checkbox" id="openNowFilter" /> Open Now</label>
+          <label style="display:block;margin-top:6px;"><input type="checkbox" id="inStockOnly" checked /> In Stock Only</label>
+          <label style="display:block;margin-top:6px;"><input type="checkbox" id="onSaleOnly" /> On Sale</label>
+        </div>
+
+        <button class="btn btn-ghost small block" id="clearFiltersBtn" data-i18n="clearAll" style="margin-top:8px;">Clear All Filters</button>
+      </aside>
+
+      <div class="catalog-results">
+        <div class="results-bar">
+          <div>
+            <h2 id="resultsHeading">All Products</h2>
+            <p id="resultsSummary" class="results-count">0 items</p>
+          </div>
+        </div>
+        <div id="storeGrid" class="product-grid"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer"></footer>
+  <div id="shopToast" class="shop-toast"></div>
+
+  <script src="js/data.js?v=57"></script>
+  <script src="js/translations.js?v=57"></script>
+  <script src="js/store.js?v=57"></script>
+  <script src="js/catalog.js?v=57"></script>
+  <script src="js/location-gmaps.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/shop.js?v=57"></script>
+</body>
+</html>

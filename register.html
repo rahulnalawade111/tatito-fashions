@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Tatito Fashions</title>
+  <meta name="description" content="Join Tatito Fashions — custom fashion for everyone." />
+  <link rel="icon" href="assets/images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=57" />
+</head>
+<body>
+  <header class="navbar"></header>
+
+  <div id="loginLogoIntro" class="login-logo-intro">
+    <div class="brand-plate">
+      <img src="assets/images/tatito-logo-official.jpg" alt="Tatito Fashions" />
+      <div class="brand-name">
+        <span class="brand-title">TATITO</span>
+        <em class="brand-sub">FASHIONS</em>
+      </div>
+    </div>
+  </div>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <img src="assets/images/tatito-logo-official.jpg" alt="Tatito Fashions" />
+        <div class="brand-name">
+          <span class="brand-title">TATITO</span>
+          <em class="brand-sub">FASHIONS</em>
+        </div>
+      </div>
+      <div class="auth-tabs">
+        <a href="login.html" class="auth-tab">Login</a>
+        <a href="register.html" class="auth-tab active">Register</a>
+      </div>
+
+      <p class="eyebrow" style="text-align:center;margin-bottom:8px;">Join Tatito</p>
+      <h1>Create Account</h1>
+
+      <form id="registerForm" class="auth-form">
+        <!-- Step 1: Details -->
+        <div id="regStepDetails" style="display:flex;flex-direction:column;gap:14px;">
+          <label>
+            <span>Full Name *</span>
+            <input type="text" name="name" placeholder="Your full name" required />
+          </label>
+          <label>
+            <span>Email *</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            <span>Mobile Number *</span>
+            <div style="display:flex;gap:8px;">
+              <select id="regCountryCode" style="border:1px solid var(--line);border-radius:12px;background:var(--ivory);font-size:14px;font-weight:600;color:var(--muted);padding:0 8px;cursor:pointer;outline:none;">
+                <option value="+91">🇮🇳 +91</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+971">🇦🇪 +971</option>
+                <option value="+65">🇸🇬 +65</option>
+                <option value="+61">🇦🇺 +61</option>
+                <option value="+966">🇸🇦 +966</option>
+                <option value="+880">🇧🇩 +880</option>
+                <option value="+92">🇵🇰 +92</option>
+                <option value="+94">🇱🇰 +94</option>
+                <option value="+977">🇳🇵 +977</option>
+                <option value="+60">🇲🇾 +60</option>
+              </select>
+              <input type="tel" name="mobile" placeholder="98765 43210" maxlength="10" style="flex:1;" required />
+            </div>
+          </label>
+          <label>
+            <span>Password *</span>
+            <input type="password" name="password" placeholder="Create a password" required />
+          </label>
+          <button type="submit" class="btn btn-primary block">Send Verification Code →</button>
+        </div>
+
+        <!-- Step 2: OTP Verification -->
+        <div id="regStepOtp" style="display:none;flex-direction:column;gap:14px;">
+          <div style="text-align:center;">
+            <div style="font-size:48px;margin-bottom:8px;">📱</div>
+            <h2 style="font-family:var(--font-display);font-size:20px;margin-bottom:6px;">Verify Your Mobile</h2>
+            <p style="font-size:14px;color:var(--muted);">Enter the 6-digit code sent to <strong id="regOtpDisplay">+91</strong></p>
+          </div>
+
+          <!-- OTP Input Boxes -->
+          <div class="otp-input-row" style="display:flex;gap:8px;justify-content:center;">
+            <input type="text" class="otp-digit" maxlength="1" style="width:44px;height:52px;text-align:center;font-size:22px;font-weight:700;border:2px solid var(--line);border-radius:12px;background:var(--surface-solid);color:var(--text);outline:none;transition:border-color .2s;" />
+            <input type="text" class="otp-digit" maxlength="1" style="width:44px;height:52px;text-align:center;font-size:22px;font-weight:700;border:2px solid var(--line);border-radius:12px;background:var(--surface-solid);color:var(--text);outline:none;transition:border-color .2s;" />
+            <input type="text" class="otp-digit" maxlength="1" style="width:44px;height:52px;text-align:center;font-size:22px;font-weight:700;border:2px solid var(--line);border-radius:12px;background:var(--surface-solid);color:var(--text);outline:none;transition:border-color .2s;" />
+            <input type="text" class="otp-digit" maxlength="1" style="width:44px;height:52px;text-align:center;font-size:22px;font-weight:700;border:2px solid var(--line);border-radius:12px;background:var(--surface-solid);color:var(--text);outline:none;transition:border-color .2s;" />
+            <input type="text" class="otp-digit" maxlength="1" style="width:44px;height:52px;text-align:center;font-size:22px;font-weight:700;border:2px solid var(--line);border-radius:12px;background:var(--surface-solid);color:var(--text);outline:none;transition:border-color .2s;" />
+            <input type="text" class="otp-digit" maxlength="1" style="width:44px;height:52px;text-align:center;font-size:22px;font-weight:700;border:2px solid var(--line);border-radius:12px;background:var(--surface-solid);color:var(--text);outline:none;transition:border-color .2s;" />
+          </div>
+
+          <button type="button" id="verifyOtpBtn" class="btn btn-primary block">✓ Verify & Create Account</button>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <button type="button" id="changeMobileBtn" class="btn btn-ghost small">← Change Number</button>
+            <button type="button" id="regResendOtp" class="btn btn-ghost small">Resend Code</button>
+          </div>
+        </div>
+      </form>
+      <p class="auth-switch"><span>Already have an account?</span> <a href="login.html">Login</a></p>
+    </div>
+  </main>
+
+  <div id="shopToast" class="shop-toast"></div>
+  <script src="js/data.js?v=57"></script>
+  <script src="js/translations.js?v=57"></script>
+  <script src="js/store.js?v=57"></script>
+  <script src="js/location-gmaps.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/auth.js?v=57"></script>
+</body>
+</html>

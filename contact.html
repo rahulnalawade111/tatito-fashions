@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Tatito Fashions</title>
+  <meta name="description" content="Get in touch with Tatito Fashions — customer support, partnerships, and seller inquiries." />
+  <link rel="icon" href="assets/images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=57" />
+</head>
+<body data-page="contact">
+  <header class="navbar"></header>
+  <main class="page-shell">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Contact Us</span>
+    </div>
+
+    <section class="category-hero" style="margin-bottom:30px;">
+      <div>
+        <p class="eyebrow">Get in Touch</p>
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you — whether it's about an order, a partnership, or becoming a seller.</p>
+      </div>
+    </section>
+
+    <div class="checkout-layout">
+      <div>
+        <!-- Contact Form -->
+        <div class="checkout-panel">
+          <h2>Send Us a Message</h2>
+          <form id="contactForm" class="auth-form">
+            <label>
+              <span>Full Name</span>
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" placeholder="+91 98765 43210" />
+            </label>
+            <label>
+              <span>Subject</span>
+              <input type="text" name="subject" placeholder="How can we help?" required />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="Write your message…" required style="width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-family:inherit;font-size:14px;background:var(--surface-solid);color:var(--text);outline:none;resize:vertical;"></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary block">📧 Send Message</button>
+          </form>
+        </div>
+
+        <!-- FAQ -->
+        <div class="checkout-panel" style="margin-top:24px;">
+          <h2>Frequently Asked Questions</h2>
+          <div id="faqList"></div>
+        </div>
+      </div>
+
+      <!-- Contact Info Sidebar -->
+      <aside class="cart-sidebar">
+        <div class="cart-summary">
+          <h3 style="margin-bottom:16px;">Contact Info</h3>
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <div>
+              <h4 style="font-size:13px;color:var(--gold-deep);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">📧 Email</h4>
+              <p style="font-size:14px;color:var(--muted);">support@tatitofashions.com</p>
+              <p style="font-size:14px;color:var(--muted);">sellers@tatitofashions.com</p>
+            </div>
+            <div>
+              <h4 style="font-size:13px;color:var(--gold-deep);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">📞 Phone</h4>
+              <p style="font-size:14px;color:var(--muted);">+91 98765 43210</p>
+              <p style="font-size:14px;color:var(--muted);">+91 91234 56789</p>
+            </div>
+            <div>
+              <h4 style="font-size:13px;color:var(--gold-deep);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">📍 Office</h4>
+              <p style="font-size:14px;color:var(--muted);">Tatito Fashions HQ<br>Linking Road, Bandra West<br>Mumbai, Maharashtra 400050</p>
+            </div>
+            <div>
+              <h4 style="font-size:13px;color:var(--gold-deep);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">🕒 Hours</h4>
+              <p style="font-size:14px;color:var(--muted);">Mon–Sat: 10 AM – 8 PM<br>Sunday: 11 AM – 6 PM</p>
+            </div>
+            <div>
+              <h4 style="font-size:13px;color:var(--gold-deep);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Follow Us</h4>
+              <div style="display:flex;gap:10px;">
+                <a href="#" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--ivory);border:1px solid var(--line);font-size:16px;">📘</a>
+                <a href="#" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--ivory);border:1px solid var(--line);font-size:16px;">📷</a>
+                <a href="#" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--ivory);border:1px solid var(--line);font-size:16px;">🐦</a>
+                <a href="#" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--ivory);border:1px solid var(--line);font-size:16px;">📺</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+  <div id="shopToast" class="shop-toast"></div>
+
+  <script src="js/data.js?v=57"></script>
+  <script src="js/translations.js?v=57"></script>
+  <script src="js/store.js?v=57"></script>
+  <script src="js/location-gmaps.js?v=57"></script>
+  <script src="js/app.js?v=57"></script>
+  <script src="js/contact.js?v=57"></script>
+</body>
+</html>
